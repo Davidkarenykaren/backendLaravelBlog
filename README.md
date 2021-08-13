@@ -1,5 +1,3 @@
-# Laravel Api REST Sistema Inventario- tienda
-
-# se utilizo libreria jspdf
+# Laravel Api REST Blog
 
 # Ejecutar php artisan migrate para crear la base de datos.
