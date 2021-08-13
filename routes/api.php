@@ -16,19 +16,6 @@ Route::group(
     }
 );
 
-Route::get('products', 'App\Http\Controllers\ProductController@listarProductos');
+Route::get('publicaciones', 'App\Http\Controllers\PublicacionController@listarPublicaciones');
 
-Route::post('crear_producto', 'App\Http\Controllers\ProductController@crearProducto');
-
-Route::post('actualizar_stock', 'App\Http\Controllers\ProductController@actualizarStock');
-
-
-Route::get('obtener_usuario/{id}', 'App\Http\Controllers\UsuarioController@obtenerUsuario');
-
-Route::get('listar_usuarios', 'App\Http\Controllers\UsuarioController@listarUsuarios');
-
-Route::post('crear_usuario', 'App\Http\Controllers\UsuarioController@crearUsuario');
-
-Route::get('eliminar_usuario/{id}', 'App\Http\Controllers\UsuarioController@eliminarUsuario');
-
-Route::post('actualizar_usuario', 'App\Http\Controllers\UsuarioController@actualizarUsuario');
+Route::post('crear_publicacion', 'App\Http\Controllers\PublicacionController@crearPublicacion');

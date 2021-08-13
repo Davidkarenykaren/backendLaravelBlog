@@ -5,9 +5,9 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Product extends Model
+class Publicacion extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['name', 'price', 'inventario_stock', 'date_venc', 'lote'];
+    protected $fillable = ['titulo', 'contenido', 'urlImagen', 'email'];
 }

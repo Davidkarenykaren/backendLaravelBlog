@@ -1,0 +1,18 @@
+
+
+SELECT sku as Codigo_producto, SUM(cantidad) AS TotalCantidades, SUM((precio_unitario*cantidad)-descuento+iva) as Valor_venta, SUM(costo_unitario*cantidad) as Total_costo
+FROM `facturacion_detalle`
+GROUP BY nombre_item
+ORDER BY SUM(cantidad) DESC
+LIMIT 0 , 5
+
+
+
+SELECT fac.id_factura,	fac.fecha_realizacion as fecha_venta, ter.documento, ter.nombre, ter.apellido, 
+(SELECT SUM(facd.precio_unitario*facd.cantidad) from `facturacion_detalle` as facd where facd.id_factura = fac.id_factura ) 
+AS total_venta, (SELECT SUM(facd.cantidad) from `facturacion_detalle` as facd where facd.id_factura = fac.id_factura ) AS total_cantidad, 
+(SELECT SUM(facd.iva) from `facturacion_detalle` as facd where facd.id_factura = fac.id_factura ) AS total_iva from `facturacion` as fac 
+LEFT JOIN `tercero` as ter ON (fac.id_tercero = ter.id_tercero) ORDER BY ter.fecha_registro DESC
+
+
+
